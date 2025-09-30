@@ -1,101 +1,77 @@
-Online Quiz Application 🎯
-Project Description
+# Online Quiz App 🎯
 
-This is a full-stack Online Quiz Application where users can take a quiz, track their time, and view their score with a detailed review of correct and incorrect answers.
+A full-stack quiz application built with **React**, **Bootstrap 5**, **Node.js (Express)**, and **SQLite**. Users can take a quiz, navigate through questions, submit answers, and view detailed results with correct/incorrect answers. Includes a countdown timer and backend unit tests for scoring logic.
 
-Key Features:
+---
 
-Start page with “Start Quiz” button.
+## 🚀 Features
 
-Displays one question at a time with options.
+* Start quiz with a simple UI.
+* Navigate with **Next** / **Previous** buttons.
+* Timer auto-submits when time is up.
+* Backend scoring with detailed review of answers.
+* Unit tests for scoring logic (Jest).
 
-Next and Previous navigation buttons.
+---
 
-Timer for quiz duration (5 minutes).
+## ⚙️ Setup & Run Locally
 
-Submit button on the last question.
+### 1. Clone Repository
 
-Results page showing:
+```bash
+git clone https://github.com/ImamChanBashaShaik/online-quiz-app.git
+cd online-quiz-app
+```
 
-Total score
+### 2. Backend Setup
 
-Correct and wrong answers
-
-Detailed review per question
-
-Backend Features:
-
-SQLite database stores quiz questions.
-
-API endpoints to fetch questions and submit answers.
-
-Scoring logic separated for easy testing.
-
-Unit tests using Jest ensure scoring works correctly.
-
-Setup Instructions
-Frontend
-
-Navigate to the frontend folder:
-
-cd quiz-frontend
-
-
-Install dependencies:
-
-npm install
-
-
-Start the development server:
-
-npm start
-
-
-The frontend will run on http://localhost:3000
-
-Backend
-
-Navigate to the backend folder:
-
+```bash
 cd quiz-backend
-
-
-Install dependencies:
-
 npm install
-
-
-Start the server:
-
 node server.js
+```
 
+Backend runs on: `http://localhost:5000`
 
-The backend will run on http://localhost:5000
+### 3. Frontend Setup
 
-Running Test Cases
+```bash
+cd ../quiz-frontend
+npm install
+npm start
+```
 
-Make sure you are in the backend folder:
+Frontend runs on: `http://localhost:3000`
 
-cd quiz-backend
+---
 
+## 🧪 Run Tests (Backend)
 
-Run the Jest tests:
+From `quiz-backend`:
 
+```bash
 npm test
+```
 
+This runs unit tests for scoring logic with **Jest**.
 
-You should see results indicating all tests passed for the scoring logic.
+---
 
-Assumptions / Design Choices
+## 📌 Assumptions & Design Choices
 
-Questions Table: Each question has text, options (stored as JSON), and the correct option index.
+* SQLite is used for lightweight storage of quiz questions.
+* Each question stores its text, options, and correct answer index.
+* API never exposes correct answers during quiz fetch.
+* Frontend tracks answers locally and submits once.
+* Results page shows detailed feedback with ✅ / ❌ indicators.
 
-Frontend: Built using React and Bootstrap 5 for responsive layout.
+---
 
-Timer: Fixed 5-minute timer per quiz.
+## 📂 Project Structure
 
-Navigation: Users can navigate back and forth between questions.
-
-Results Page: Shows detailed review with color-coded answers (green for correct, red for wrong).
-
-Testing: Scoring logic is tested independently using Jest to ensure correctness.
+```
+online-quiz-app/
+ ├── quiz-backend/     # Node.js + Express + SQLite backend
+ ├── quiz-frontend/    # React + Bootstrap 5 frontend
+ └── README.md         # Project documentation
+```
